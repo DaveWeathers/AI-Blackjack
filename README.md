@@ -14,15 +14,19 @@ The goal of this assignment is to introduce you to intelligent agents, and at th
 
 ## Get a copy of the assignment template
 
-1. Fork the repository for the current assignment, https://git.cis.uab.edu/cs-460/agents-blackjack, by following the link, typing in your CIS credentials, and clicking on the "Fork" button on the right hand side of the "CS 460 / Agents - Blackjack" page.
+1. Sign into https://git.cis.uab.edu using your CIS credentials (not your UAB credentials).
 
-2. Give your instructor access to your fork. **I cannot grade your assignment unless you complete this step.** Click on `Settings`, then `Members`, then `New Project Member`. In the `People` box, search for and add the user ``bethard``. Under ``Project Access``, select ``Reporter``. Then click ``Add users``.
+2. Set up SSH access for your account. Go to https://git.cis.uab.edu/profile/keys and follow the instructions there to add an SSH key.
 
-3. You've successfully forked the repository and granted your instructor access, but so far your repository only exists on `git.cis.uab.edu`. To be able to work on the project, you will need to clone it to your local machine. Click on the HTTPS button and observe the URL in the box that looks like `https://git.cis.uab.edu/.../agents-blackjack.git`. Run the following command, replacing `<url>` with the URL from the box:
+3. Fork the repository for the current assignment, https://git.cis.uab.edu/cs-460/agents-blackjack, by following the link, and clicking on the "Fork" button on the right hand side of the "CS 460 / Agents - Blackjack" page.
+
+4. Give your instructor access to your fork. **I cannot grade your assignment unless you complete this step.** Click on `Settings`, then `Members`, then `New Project Member`. In the `People` box, search for and add the user ``bethard``. Under ``Project Access``, select ``Reporter``. Then click ``Add users``.
+
+5. Copy the code from your fork at `git.cis.uab.edu` to your local machine so that you can start editing it. Run the following command, replacing `<url>` with the URL displayed at the top of your fork's webpage (which looks something like `git@git.cis.uab.edu:.../agents-blackjack.git`):
 
         git clone <url>
 
-4. You should see that a directory named `agents-blackjack` has been created and populated. Change to that directory:
+6. You should see that a directory named `agents-blackjack` has been created and populated. Change to that directory:
 
         cd agents-blackjack
 
@@ -60,14 +64,16 @@ The goal of this assignment is to introduce you to intelligent agents, and at th
 
 1. If you look closely at the test failures, you will see that the problem is that `edu.uab.cis.agents.blackjack.DealerAgent.act` is throwing a `java.lang.UnsupportedOperationException`.
 
-2. Your task is to correctly implement `edu.uab.cis.agents.blackjack.DealerAgent.act` by modifying `src/main/java/edu/uab/cis/agents/blackjack/DealerAgent.java`. **Do not modify any other files.** Your agent should implement the following rules:
+2. Your task is to correctly implement `edu.uab.cis.agents.blackjack.DealerAgent.act` by modifying `src/main/java/edu/uab/cis/agents/blackjack/DealerAgent.java`. Your agent should implement the following rules:
 
-   * If the total points represented by the cards are 17 or more, `act` should return `Action.STAND`. Otherwise, it should return `Action.HIT`.
-   * Even if the total points represents 22 or more (which traditionally would be a "bust") you should return `Action.STAND`.
-   * In calculating the total points, the order of the cards does not matter, only the point values.
-   * The numeric cards always count for the equivalent number of points (TWO=2, THREE=3, ..., TEN=10).
-   * JACK, QUEEN and KING always count for 10 points.
-   * Each ACE may count for either 11 points or 1 point. You should pick between these by aiming for the highest possible points without exceeding 21. That is, if counting an ACE as 11 points would cause your total points to be 22 or more, you should count that ACE as 1 point.
+  * If the total points represented by the cards are 17 or more, `act` should return `Action.STAND`. Otherwise, it should return `Action.HIT`.
+  * Even if the total points represents 22 or more (which traditionally would be a "bust") you should return `Action.STAND`.
+  * In calculating the total points, the order of the cards does not matter, only the point values.
+  * The numeric cards always count for the equivalent number of points (TWO=2, THREE=3, ..., TEN=10).
+  * JACK, QUEEN and KING always count for 10 points.
+  * Each ACE may count for either 11 points or 1 point. You should pick between these by aiming for the highest possible points without exceeding 21. That is, if counting an ACE as 11 points would cause your total points to be 22 or more, you should count that ACE as 1 point.
+
+3. You may modify only `src/main/java/edu/uab/cis/agents/blackjack/DealerAgent.java` and `src/test/java/edu/uab/cis/agents/blackjack/DealerAgentTest.java`. **Do not modify any other files.** If you need to declare any additional classes, please do so in one of these files.
 
 ## Test your code
 
