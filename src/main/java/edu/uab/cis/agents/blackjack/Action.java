@@ -11,5 +11,9 @@ public enum Action {
   /**
    * Indicates that the Agent does not want any more cards.
    */
-  STAND
+  STAND,
+  /**
+   * Indicates that that the Agent's hand exceeds 21 points.
+   */
+  BUST
 }

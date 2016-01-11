@@ -12,7 +12,7 @@ public interface Agent {
    * @param cards
    *          The cards dealt so far to the Agent.
    * @return An action indicating whether the Agent would like to
-   *         {@link Action#HIT} or {@link Action#STAND}.
+   *         {@link Action#HIT}, {@link Action#STAND}, or {@link Action#BUST}.
    */
   public Action act(List<Card> cards);
 }
